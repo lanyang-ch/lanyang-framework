@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lanyang.framework</groupId>
+    <artifactId>framework-dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <description>统一版本管理</description>
+
+    <properties>
+        <framework.common.version>1.0.0</framework.common.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <lombok.version>1.18.26</lombok.version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <hutool-core.version>5.6.5</hutool-core.version>
+        <poi.version>4.1.2</poi.version>
+        <fastjson.version>2.0.25</fastjson.version>
+        <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
+        <velocity.version>2.3</velocity.version>
+        <kaptcha.version>2.3.3</kaptcha.version>
+        <spring-cloud.version>2021.0.5</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
+        <spring-boot.version>2.7.12</spring-boot.version>
+        <spring-boot-admin.version>2.7.10</spring-boot-admin.version>
+        <swagger.fox.version>3.0.0</swagger.fox.version>
+        <swagger.core.version>1.6.2</swagger.core.version>
+        <knife4j-spring-boot-starter.version>2.0.9</knife4j-spring-boot-starter.version>
+        <tobato.version>1.27.2</tobato.version>
+        <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
+        <jsqlparser.version>4.3</jsqlparser.version>
+        <druid.version>1.2.16</druid.version>
+        <dynamic-ds.version>3.5.2</dynamic-ds.version>
+        <mysql-connector.version>8.0.31</mysql-connector.version>
+        <mysql-plus.version>3.5.0</mysql-plus.version>
+        <mybatis-plus-join.version>1.4.11</mybatis-plus-join.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <xxljob.version>2.4.0</xxljob.version>
+        <redisson.version>3.18.0</redisson.version>
+        <minio.version>8.2.2</minio.version>
+        <netty.version>4.1.86.Final</netty.version>
+        <httpclient.version>4.5.7</httpclient.version>
+        <log-feign.version>1.0-SNAPSHOT</log-feign.version>
+    </properties>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 基础依赖包 -->
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool-core.version}</version>
+            </dependency>
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- 线程传递值 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+            <!-- 代码生成使用模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>pro.fessional</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-sdk-java</artifactId>
+                <version>4.35.79.ALL</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>3.5.3</version>
+            </dependency>
+
+            <!-- spring依赖包 -->
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringBoot Admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <!-- Swagger 依赖配置 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.fox.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!-- 文件管理依赖包 -->
+            <!-- FastDFS 分布式文件系统 -->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${tobato.version}</version>
+            </dependency>
+
+            <!-- 数据库依赖包 -->
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mysql-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId>
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mysql-plus.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 安全依赖包 -->
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- 计划任务依赖包 -->
+            <!-- xxljob -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxljob.version}</version>
+            </dependency>
+
+            <!--redisson-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <!--minio-->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!--自定义模块-->
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-common</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-netty</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-file</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-http</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-redis</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-mybatis-plus</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-swagger</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-web-common</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-web-security</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-message</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-log</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>framework-pay</artifactId>
+                <version>${framework.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lanyang.framework</groupId>
+                <artifactId>log-feign</artifactId>
+                <version>${log-feign.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 配置私服上传jar包地址 -->
+    <distributionManagement>
+        <repository>
+            <!-- release包上传地址 -->
+            <id>maven-releases</id>
+            <url>http://192.168.0.106:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <!-- snapshots包上传地址 -->
+            <id>maven-snapshots</id>
+            <url>http://192.168.0.106:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

@@ -1,0 +1,3 @@
+com.lanyang.framework.mp.aspect.TenantIgnoreAspect
+com.lanyang.framework.mp.handler.MyMetaObjectHandler
+com.lanyang.framework.mp.config.MybatisPlusConfig
