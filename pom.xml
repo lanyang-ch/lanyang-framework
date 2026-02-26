@@ -17,6 +17,8 @@
         <module>framework-redis</module>
         <module>framework-web</module>
         <module>framework-log</module>
+        <module>framework-pay</module>
+        <module>framework-netty</module>
     </modules>
 
     <properties>
