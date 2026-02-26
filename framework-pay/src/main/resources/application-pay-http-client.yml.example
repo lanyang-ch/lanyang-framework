@@ -1,0 +1,28 @@
+# 支付模块 HTTP 客户端配置示例
+# 复制此文件到 application.yml 或 application-{profile}.yml 中使用
+# 所有配置项都是可选的，未配置则使用默认值
+
+pay:
+  http-client:
+    # 连接超时时间（秒），默认 10 秒
+    connect-timeout: 10
+    
+    # 读取超时时间（秒），默认 30 秒
+    # 微信支付接口可能需要较长时间，建议设置为 30 秒或更长
+    read-timeout: 30
+    
+    # 写入超时时间（秒），默认 30 秒
+    write-timeout: 30
+    
+    # 连接池最大空闲连接数，默认 5
+    # 根据并发量调整，建议设置为 5-10
+    max-idle-connections: 5
+    
+    # 连接池保持连接时间（分钟），默认 5 分钟
+    # 连接在连接池中保持空闲的时间，超过此时间将被关闭
+    keep-alive-duration: 5
+    
+    # 是否重试连接失败，默认 true
+    # 设置为 true 时，OkHttpClient 会自动重试幂等请求
+    retry-on-connection-failure: true
+
