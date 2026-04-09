@@ -19,6 +19,7 @@
         <module>framework-log</module>
         <module>framework-pay</module>
         <module>framework-netty</module>
+        <module>framework-mqtt</module>
     </modules>
 
     <properties>
