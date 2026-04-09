@@ -16,18 +16,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class MqttMessageListener {
 
-    // ==========================
-    // 接收消息
-    // ==========================
+    /**
+     * 接收MQTT消息
+     * @param payload
+     * @param topic
+     */
     @ServiceActivator(inputChannel = "mqttInputChannel")
     public void receive(String payload, @Header("mqtt_receivedTopic") String topic) {
         log.info("收到MQTT消息 | topic:{} | payload:{}", topic, payload);
         // 这里写你的业务逻辑
     }
 
-    // ==========================
-    // 全局异常处理
-    // ==========================
+    /**
+     * 处理MQTT异常
+     * @param message
+     */
     @ServiceActivator(inputChannel = "mqttErrorChannel")
     public void handleError(Message<?> message) {
         MessageHandlingException ex = (MessageHandlingException) message.getPayload();
